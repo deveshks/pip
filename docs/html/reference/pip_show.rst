@@ -32,7 +32,8 @@ The various fields present in the JSON output and their explanation is as follow
 
 *metadata*
    A dictionary with the core metadata fields present in the ``METADATA`` file,
-   as defined in the `Core metadata specifications`_. The fields are
+   as defined in the `Core metadata specifications`_. We use the method detailed in
+   `JSON-compatible Metadata`_ to convert core metadata to json. The fields are
    lower cased, with dashes replaced by underscores.
 
 *direct_url*
@@ -56,9 +57,12 @@ The various fields present in the JSON output and their explanation is as follow
    on the queried distribution.
 
 *location*
-   A string containing the path where the distribution is installed.
+   A string containing the path where the distribution is installed. For legacy installs,
+   this is the parent directory of the metadata (.dist-info or .egg-info) directory.
+   For legacy editable installs, this is the directory where the source is located.
 
 .. _`Core metadata specifications`: https://packaging.python.org/specifications/core-metadata/
+.. _`JSON-compatible Metadata`: https://www.python.org/dev/peps/pep-0566/#json-compatible-metadata
 
 Examples
 ========
