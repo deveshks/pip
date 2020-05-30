@@ -49,17 +49,20 @@ The various fields present in the JSON output and their explanation is as follow
    the content of ``RECORD``, if present, as specified in :pep:`376`.
 
 *requested*
-   A boolean, set to True if ``REQUESTED`` is present,
-   as specified in :pep:`376`.
+   A string containing the content of ``REQUESTED``,
+   if present, as specified in :pep:`376`.
 
 *required_by*
    A list of canonicalized distribution names that depend
    on the queried distribution.
 
+*requires*
+   A list of canonicalized distribution names on which
+   this distribution depends on.
+
 *location*
-   A string containing the path where the distribution is installed. For legacy installs,
-   this is the parent directory of the metadata (.dist-info or .egg-info) directory.
-   For legacy editable installs, this is the directory where the source is located.
+   A string containing the path where the distribution is installed.
+   This is the parent directory of the metadata (.dist-info or .egg-info) directory.
 
 .. _`Core metadata specifications`: https://packaging.python.org/specifications/core-metadata/
 .. _`JSON-compatible Metadata`: https://www.python.org/dev/peps/pep-0566/#json-compatible-metadata
